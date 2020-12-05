@@ -1,0 +1,64 @@
+{
+ "name": "OneSearch (unofficial)",
+ "description": "An extension which makes your default search OneSearch and redirects you to onesearch.com if you go to Google, Bing, Yahoo, Yandex, DuckDuckGo, Qwant, Ecosia, AOL, Baidu, Sogou and more",
+ "version": "1.6",
+ "manifest_version": 2,
+ "icons": {"48": "onesearch_48.png"},
+ "content_scripts": [
+ {
+    "matches": [
+        "https://www.google.com/*",
+        "https://www.google.ca/*",
+        "https://www.google.com.hk/*",
+        "https://www.google.com.au/*",
+        "https://www.google.co.in/*",
+        "https://www.google.co.jp/*",
+        "https://www.google.com.ar/*",
+        "https://www.google.com.vn/*",
+        "https://www.google.com.mx/*",
+        "https://www.google.de/*",
+        "https://www.google.fr/*",
+        "https://www.google.hu/*",
+        "https://www.google.it/*",
+        "https://www.google.nl/*",
+        "https://www.google.pl/*",
+        "https://www.google.pt/*",
+        "https://www.bing.com/*",
+        "https://*.yahoo.com/*",
+        "https://www.yahoo.co.jp/*",
+        "https://yandex.ru/*",
+        "https://yandex.com/*",
+        "https://www.aol.com/*",
+        "https://www.aol.co.uk/*",
+        "https://*.ask.com/*",
+        "https://www.egerin.com/*",
+        "https://startpage.com/*",
+        "https://www.webcrawler.com/*",
+        "https://yippy.com/*",
+        "https://www.mojeek.com/*",
+        "https://www.mojeek.co.uk/*",
+        "https://www.startpage.com/*",
+        "https://duckduckgo.com/*",
+        "https://www.swisscows.com/*",
+        "https://www.givewater.com/*",
+        "https://www.ecosia.org/*",
+        "https://www.baidu.com/*",
+        "https://www.sogou.com/*"
+    ],
+    "js": ["redirect.js"]
+ }
+ ],
+ "chrome_settings_overrides": {
+         "search_provider": {
+			"favicon_url": "https://www.onesearch.com/favicon.ico",
+			"is_default": true,
+			"keyword": "os",
+			"name": "One Search",
+            "search_url": "https://onesearch.com/yhs/search?p={searchTerms}&yext=0"
+		}
+       },
+ "browser_action": {
+     "default_icon": "OneSearch.png",
+     "default_popup": "extension.html"
+ }
+}
